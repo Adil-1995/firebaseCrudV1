@@ -30,7 +30,7 @@
   </div>
 
 </div> -->
-<div class="card mt-5">
+<div class="card mt-5 " style="width: 500px;">
   <div class="card-body">
       <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
           <!-- TO UPDATE -->
@@ -78,6 +78,21 @@
                 #price="ngModel"
                 [(ngModel)]="productService.selectedProduct.price"
                 placeholder="Add A Price"
+                >
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                  <span class="input-group-text">$</span>
+              </div>
+              <input
+              type="date"
+                class="form-control"
+                name="fecha"
+                #fecha="ngModel"
+                [(ngModel)]="productService.selectedProduct.fecha"
+
                 >
             </div>
           </div>

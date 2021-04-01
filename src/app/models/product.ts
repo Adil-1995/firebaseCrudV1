@@ -4,4 +4,5 @@ export class Product {
   category: string;
   location: string;
   price: number;
+  fecha: Date;
 }

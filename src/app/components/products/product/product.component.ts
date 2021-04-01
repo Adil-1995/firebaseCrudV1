@@ -2,6 +2,7 @@ import { ProductService } from './../../../services/product.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Product } from 'src/app/models/product';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-product',
@@ -17,7 +18,14 @@ export class ProductComponent implements OnInit {
   }
 
   onSubmit(productForm: NgForm) {
-    this.productService.insertProduct(productForm.value);
+    if (productForm.value.$key == null){
+      this.productService.insertProduct(productForm.value);
+      Swal.fire(
+        'Product has beed inserted!',
+        'You clicked the button!',
+        'success',
+      )
+    }else this.productService.updateProduct(productForm.value);
     console.log(productForm.value);
     this.resetForm(productForm);
   }

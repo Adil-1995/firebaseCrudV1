@@ -22,7 +22,8 @@ export class ProductService {
       name: product.name,
       category: product.category,
       location: product.location,
-      price: product.price
+      price: product.price,
+      fecha: product.fecha
     });
   }
 
@@ -31,7 +32,8 @@ export class ProductService {
       name: product.name,
       category: product.category,
       location: product.location,
-      price: product.price
+      price: product.price,
+      fecha: product.fecha
     });
   }
 

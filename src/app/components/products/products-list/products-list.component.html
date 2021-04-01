@@ -1,9 +1,22 @@
-<div class="card">
+<div class="card"  style="width: 500px;"  >
   <div class="card-body">
     <h6 class="text-center">List of Product</h6>
     <table class="table table-sm table-hover">
       <tbody>
-        <tr>
+        <tr *ngFor="let product of productList">
+          <td>{{product.name}}</td>
+          <td>{{product.category}}</td>
+          <td>{{product.location}}</td>
+          <td>{{product.price}}</td>
+          <td>{{product.fecha}}</td>
+
+
+          <button (click)="onEdit(product)">
+            Editar
+          </button>
+          <button (click)="onDeletet(product.$key)">
+            Eliminar
+          </button>
 
         </tr>
       </tbody>

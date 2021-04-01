@@ -15,6 +15,9 @@ import { ProductComponent } from './components/products/product/product.componen
 import { ProductService } from './services/product.service';
 import { FormsModule }   from '@angular/forms';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
 
 
 @NgModule({
@@ -29,7 +32,10 @@ import { FormsModule }   from '@angular/forms';
     AppRoutingModule,
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
+
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
