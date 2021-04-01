@@ -30,8 +30,8 @@
   </div>
 
 </div> -->
-<div class="card mt-5 " style="width: 500px;">
-  <div class="card-body">
+<div >
+  <div >
       <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
           <!-- TO UPDATE -->
           <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="productService.selectedProduct.$key">
@@ -40,58 +40,41 @@
             <input
               type="text"
               class="form-control"
-              name="name"
-              #name="ngModel"
-              [(ngModel)]="productService.selectedProduct.name"
-              placeholder="Add A Product"
+              name="codigo"
+              #codigo="ngModel"
+              [(ngModel)]="productService.selectedProduct.codigo"
+              placeholder="Add A codigo"
               >
           </div>
           <div class="form-group">
               <input
                 type="text"
                 class="form-control"
-                name="category"
-                #category="ngModel"
-                [(ngModel)]="productService.selectedProduct.category"
-                placeholder="Add A Category"
+                name="descripcion"
+                #descripcion="ngModel"
+                [(ngModel)]="productService.selectedProduct.descripcion"
+                placeholder="Add A descripcion"
                 >
             </div>
           <div class="form-group">
             <input
               type="text"
               class="form-control"
-              name="location"
-              #location="ngModel"
-              [(ngModel)]="productService.selectedProduct.location"
-              placeholder="Add A Location"
+              name="proveedor"
+              #proveedor="ngModel"
+              [(ngModel)]="productService.selectedProduct.proveedor"
+              placeholder="Add A proveedor"
               >
           </div>
           <div class="form-group">
             <div class="input-group">
-              <div class="input-group-prepend">
-                  <span class="input-group-text">$</span>
-              </div>
-              <input
-                type="number"
-                class="form-control"
-                name="price"
-                #price="ngModel"
-                [(ngModel)]="productService.selectedProduct.price"
-                placeholder="Add A Price"
-                >
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                  <span class="input-group-text">$</span>
-              </div>
+
               <input
               type="date"
                 class="form-control"
-                name="fecha"
-                #fecha="ngModel"
-                [(ngModel)]="productService.selectedProduct.fecha"
+                name="fechaCaducidad"
+                #fechaCaducidad="ngModel"
+                [(ngModel)]="productService.selectedProduct.fechaCaducidad"
 
                 >
             </div>

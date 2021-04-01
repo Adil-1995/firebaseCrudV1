@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Product } from '../models/product';
@@ -11,7 +12,7 @@ export class ProductService {
   productList: AngularFireList<any>
   selectedProduct: Product = new Product();
 
-  constructor(private firebase: AngularFireDatabase) { }
+  constructor(private firebase: AngularFireDatabase, private toastr: ToastrService) { }
 
   getProducts(){
    return this.productList = this.firebase.list('products');
@@ -19,22 +20,22 @@ export class ProductService {
 
   insertProduct(product: Product){
     this.productList.push({
-      name: product.name,
-      category: product.category,
-      location: product.location,
-      price: product.price,
-      fecha: product.fecha
+      codigo: product.codigo,
+      descripcion: product.descripcion,
+      proveedor: product.proveedor,
+      fechaCaducidad: product.fechaCaducidad
     });
   }
 
   updateProduct(product: Product){
     this.productList.update(product.$key,{
-      name: product.name,
-      category: product.category,
-      location: product.location,
-      price: product.price,
-      fecha: product.fecha
+      codigo: product.codigo,
+      descripcion: product.descripcion,
+      proveedor: product.proveedor,
+      fechaCaducidad: product.fechaCaducidad
+
     });
+    this.toastr.success("Successfull, Producto ha actualizado correctamente.")
   }
 
   deleteProduct($key: string){

@@ -1,27 +1,40 @@
-<div class="card"  style="width: 500px;"  >
+
+<div >
+
   <div class="card-body">
+    <button type="button" class="btn btn-primary" [routerLink]="">Añadir artículo</button>
     <h6 class="text-center">List of Product</h6>
     <table class="table table-sm table-hover">
       <tbody>
-        <tr *ngFor="let product of productList">
-          <td>{{product.name}}</td>
-          <td>{{product.category}}</td>
-          <td>{{product.location}}</td>
-          <td>{{product.price}}</td>
-          <td>{{product.fecha}}</td>
-
-
-          <button (click)="onEdit(product)">
-            Editar
-          </button>
-          <button (click)="onDeletet(product.$key)">
-            Eliminar
-          </button>
+        <tr style=" background-color: #4CAF50;">
+          <th scope="col">Código</th>
+          <th scope="col">Descprición</th>
+          <th scope="col">Proveedor</th>
+          <th scope="col">Fecha de Caducidad</th>
+          <th scope="col">Editar</th>
+          <th scope="col">Eliminar</th>
 
         </tr>
+        <tr *ngFor="let product of productList">
+          <td>{{product.codigo}}</td>
+          <td>{{product.descripcion}}</td>
+          <td>{{product.proveedor}}</td>
+          <td>{{product.fechaCaducidad}}</td>
+          <td  (click)="onEdit(product)"><a class="btn btn-default">Editar</a></td>
+          <td (click)="onDeletet(product.$key)"><a class="btn btn-danger">Eliminar</a></td>
+
+
+        </tr>
+
       </tbody>
 
 
     </table>
   </div>
 </div>
+<nav>
+  <ul>
+    <li><a routerLink="/ProductComponent" routerLinkActive="active">add Component</a></li>
+
+  </ul>
+</nav>
